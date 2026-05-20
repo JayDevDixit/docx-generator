@@ -1,0 +1,17 @@
+{
+  "name": "node_docx",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "folder": "node folder.js",
+    "docx": "node docx.js"
+  },
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
