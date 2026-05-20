@@ -1,3 +1,5 @@
+import path from "path";
+
 export const getDay = () =>{
     const date = new Date()
 
@@ -8,3 +10,10 @@ export const getDay = () =>{
 } 
 
 export const patch_dir = "C:\\Users\\jddixit\\Documents\\Axway\\patching";
+
+export const IMAGE_EXTENSIONS = ['.png', '.jpg', '.jpeg']
+
+export const isImage = (filename) =>{
+    const ext = path.extname(filename).toLowerCase()
+    return IMAGE_EXTENSIONS.includes(ext)
+}

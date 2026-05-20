@@ -12,6 +12,7 @@
     "docx": "node docx.js"
   },
   "dependencies": {
+    "docx": "^9.6.1",
     "prompt-sync": "^4.2.0"
   }
 }

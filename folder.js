@@ -14,11 +14,10 @@ for(let i=0;i<totalCustomers;i+=1){
 }
 
 const day = getDay()
-const dir = patch_dir
 const tasks = []
 for(let name of customers){
-    const pre = path.join(dir,day,name,'pre')
-    const post = path.join(dir,day,name,'post')
+    const pre = path.join(patch_dir,day,name,'pre')
+    const post = path.join(patch_dir,day,name,'post')
     tasks.push(fs.mkdir(pre,{recursive:true}))
     tasks.push(fs.mkdir(post,{recursive:true}))
 }
