@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "docx": "^9.6.1",
+    "image-size": "^2.0.2",
     "prompt-sync": "^4.2.0"
   }
 }
