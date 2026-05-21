@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import fs from "fs/promises";
 import path from "path";
 import {
@@ -10,13 +11,13 @@ import {
   PageBreak,
   TextRun,
 } from "docx";
-import { isdir, isImage, MAX_WIDTH, patch_dir } from "./utility.js";
+import { getDay, isdir, isImage, MAX_WIDTH, patch_dir } from "./utility.js";
 import imageSize from "image-size";
 
 const createdocx = async (customer) => {
   let children = [];
   children.push(new Paragraph({
-    alignment: AlignmentType.CENTER, spacing: {after: 600},children: [new TextRun({text: `Customer: ${customer}`,bold:true,color:'FF0000',size:32})]
+    alignment: AlignmentType.CENTER, spacing: {after: 600},children: [new TextRun({text: `Customer: ${customer.toUpperCase()}`,bold:true,color:'FF0000',size:32})]
   }))
   const preElements = await attachFiles("pre", customer);
   const postElements = await attachFiles("post", customer);
@@ -78,7 +79,7 @@ const children = []
 };
 
 console.log("--------Creating docx file----------");
-const day = "4-May";
+const day = getDay();
 const customers = await fs.readdir(path.join(patch_dir, day));
 
 const tasks = [];

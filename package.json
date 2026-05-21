@@ -6,6 +6,10 @@
   "author": "",
   "type": "module",
   "main": "index.js",
+  "bin": {
+    "foldergen": "./folder.js",
+    "docxgen" : "./docx.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "folder": "node folder.js",

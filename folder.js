@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import PromptSync from "prompt-sync"
 import path from 'path'
 import { getDay, patch_dir } from "./utility.js"
