@@ -24,3 +24,16 @@ export const isdir = async (filename) =>{
     const stat = await fs.stat(filename)
     return stat.isDirectory()
 }
+
+export const today = ()=>{
+    const now = new Date()
+    const day = String(now.getDate()).padStart(2,'0')
+    const month = now.toLocaleString('en-us',{month: 'long'})
+    const year = now.getFullYear()
+    const weekday = now.toLocaleString('en-us',{weekday:'long'})
+    const formattedDate = `${day}/${month}/${year} ${weekday}`
+    return formattedDate
+
+}
+
+export const logo_path = 'C:\\Users\\jddixit\\UI\\practice\\Automation\\node_docx\\assets\\axway_logo.png'
