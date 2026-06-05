@@ -34,6 +34,7 @@ const attachFiles = async (state, customer) => {
 const children = []
   const dir = path.join(patch_dir, day, customer, state);
   const files = await fs.readdir(dir);
+  files.length == 0 ? console.log(`No file found in ${dir.split('\\').slice(-2).join('\\')}`) : ''
   children.push(
     new Paragraph({
       text: `----------${state.toUpperCase()} Validation----------`,
@@ -70,7 +71,7 @@ const children = []
         }),
       );
     } else {
-      console.log(`Ignoring non-image file ${file}`);
+      console.log(`Ignoring non-image file ${file} in ${dir.split('\\').slice(-2).join('\\')}`);
     }
   }
   children.push(new Paragraph({ children: [new PageBreak()] }));
